@@ -10,11 +10,11 @@ Prerequisites in the system:
 3. VSCode or any IDE to code Python.
 
 Here are the steps for setup of task 1:
-1. Open any code editor for the database (SQL Server Management Studio in my case) and run the code in the file : "1. create_database.sql". This will create the database.
-2. Run the file "2. create_ingestion_table.sql" which will create the landing or bronze & silver zone for the raw data.
-3. Run the file "3. create_fact_table.sql" which will create the fact table (rudimentary design for now due to lack of time). This will host the data for the fact data of customer interaction which is similar to data warehouse or gold zone.
-4. Download the "CustomerInteractionData.csv" file and keep it in a folder. I am keeping all of this in the dags directory for now since I need to get airlfow workers to access this file since I didn't have time to setup permissions on other directories for docker. But for this task 1 purpose you can create a folder and keep this file there.
-5. Also add the "etl_csv_ingestion.py" and "etl_data_transformation.py" file in the same directory. Also add the "config.ini" file there.
+1. Open any code editor for the database (SQL Server Management Studio in my case) and run the code in the file : "1. create_database.sql" available in the "SQL Scripts" folder. This will create the database.
+2. Run the file "2. create_ingestion_table.sql" available in the "SQL Scripts" folder, which will create the landing or bronze & silver zone for the raw data.
+3. Run the file "3. create_fact_table.sql" available in the "SQL Scripts" folder, which will create the fact table (rudimentary design for now due to lack of time). This will host the data for the fact data of customer interaction which is similar to data warehouse or gold zone.
+4. Download the "CustomerInteractionData.csv" file available in the "Source" folder and keep it in a folder on your system. I am keeping all of this in the dags directory on my local system for now since I need to get airlfow workers to access this file since I didn't have time to setup permissions on other directories for docker. But for this task 1 purpose you can create a folder and keep this file there.
+5. Also add the "etl_csv_ingestion.py" (available in the "ETL" folder) and "etl_data_transformation.py" (available in the "ETL" folder) file in the same directory. Also add the "config.ini" (available in the "ETL" folder) file there.
 6. Update the config.ini file with the database credentials, servername, databasename, table name and filepath of the rawdata csv file which we added in this folder in step 4.
 7. You can now open VSCode terminal, point it to the directory where the files are and run the first 2 files by using command
    python "etl_csv_ingestion.py"
