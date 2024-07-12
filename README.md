@@ -21,3 +21,14 @@ Here are the steps for setup of task 1:
    python "etl_data_transformation.py"
 8. This will load data into the 2 tables we have created in the database and also create the "etl_ingestion.log" and "data_transformation.log" log files. I have removed logs from there to keep them small for quicker uploads.
 9. I am uploading the file "5. sql_loaded_data.sql" which contains the data which is loaded into the tables using the ETL.
+10. After you run the scripts, the data will be populated. Incase you want to run the python scripts multiple times, the data might get duplicated and there would be errors too. Hence please use the following commands to clean the tables before running the script multiple times :
+truncate table [customer_interactions].[dbo].[tbl_customer_interactions]
+truncate table [customer_interactions].[dbo].[fact_customer_interactions]
+
+
+# Task 2 - Data Pipeline with Apache Airflow
+1. Setup Docker and Airflow using the document "Airflow Docker Windows Setup Manual" available in the "Documents" folder of the repository.
+2. Place the file "daily-interactiondata-load.py" available in the "Airflow" folder of the repository.
+3. Since we want the airlfow workers to access the related files to process them, we might need to provide permissions to files which reside in your local directory. In the interest of time I put all the ETL and source files in the dags directory (not a good practice) of Airflow since I was short of time to deal with permissions. This way all files can be accessed by the workers. This includes the "CustomerInteractionData.csv" file from the Source folder of the repository, the "etl_csv_ingestion.py", "etl_data_transformation.py" & "config.ini" files from the ETL folder of the repository. Logs files will be created automatically.
+4. Adjust the config.ini file to adjust the CSV path of source file to the dags folder directory if it doesn't work.
+5. Run the DAG and that will populate the data in the 2 tables that we have created.
