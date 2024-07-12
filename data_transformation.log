@@ -1,0 +1,14 @@
+2024-07-12 11:30:56,424 - INFO - Transforming data and adding new calculated columns
+2024-07-12 11:30:56,431 - INFO - Data transformation completed
+2024-07-12 11:30:56,431 - INFO - Loading transformed data to fact_customer_interactions
+2024-07-12 11:30:56,509 - INFO - Transformed data loaded to fact_customer_interactions
+2024-07-12 11:30:56,511 - INFO - SQL Server connection closed
+2024-07-12 11:49:26,875 - INFO - Connecting to SQL Server
+2024-07-12 11:49:26,985 - INFO - Connected to SQL Server successfully
+2024-07-12 11:49:26,986 - INFO - Fetching data from tbl_customer_interactions
+2024-07-12 11:49:26,990 - INFO - Fetched 27 rows from tbl_customer_interactions
+2024-07-12 11:49:26,991 - INFO - Transforming data and adding new calculated columns
+2024-07-12 11:49:27,004 - INFO - Data transformation completed
+2024-07-12 11:49:27,005 - INFO - Loading transformed data to fact_customer_interactions
+2024-07-12 11:49:27,056 - INFO - Transformed data loaded to fact_customer_interactions
+2024-07-12 11:49:27,058 - INFO - SQL Server connection closed

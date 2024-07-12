@@ -1,0 +1,8 @@
+2024-07-12 11:48:32,137 - INFO - SQL Server connection closed
+2024-07-12 11:48:52,465 - INFO - Reading CSV file from CustomerInteractionData.csv
+2024-07-12 11:48:52,472 - INFO - CSV file read successfully with 27 rows and 5 columns
+2024-07-12 11:48:52,473 - INFO - Connecting to SQL Server
+2024-07-12 11:48:52,624 - INFO - Connected to SQL Server successfully
+2024-07-12 11:48:52,625 - INFO - Inserting data into tbl_customer_interactions
+2024-07-12 11:48:52,638 - INFO - Inserted 27 rows into tbl_customer_interactions
+2024-07-12 11:48:52,639 - INFO - SQL Server connection closed
