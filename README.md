@@ -32,3 +32,12 @@ truncate table [customer_interactions].[dbo].[fact_customer_interactions]
 3. Since we want the airlfow workers to access the related files to process them, we might need to provide permissions to files which reside in your local directory. In the interest of time I put all the ETL and source files in the dags directory (not a good practice) of Airflow since I was short of time to deal with permissions. This way all files can be accessed by the workers. This includes the "CustomerInteractionData.csv" file from the Source folder of the repository, the "etl_csv_ingestion.py", "etl_data_transformation.py" & "config.ini" files from the ETL folder of the repository. Logs files will be created automatically.
 4. Adjust the config.ini file to adjust the CSV path of source file to the dags folder directory if it doesn't work.
 5. Run the DAG and that will populate the data in the 2 tables that we have created.
+6. In case you want to run the DAG multiple times please run the commands in step 10 of Task 1 to clean the tables and reload data to avoid data duplication.
+
+# Task 3 - Data Storage and Retrieval
+1. The "2. create_ingestion_table.sql" & "3. create_fact_table.sql" files found under the "SQL Scripts" repository will create the tables in the database which will be used for running the data retrieval queries. I have created a very rudimentary fact table for data analysis in the interest of time, but we can add more dimension tables for more sophisticated design. This fact table will be our gold layer in our data lakehouse paradigm or simply the data warehouse component when we talk in terms of data lake or data warehouse.
+2. Running the "5. sql_loaded_data.sql" script under the "SQL Scripts" folder will load the data in the two tables.
+3. Run the "4. data_retrieval_scripts.sql" to get the data which are queries for the questions in the "2. Data Retrieval" section of Task 3.
+4. The "Optimization Ideas for Queries.pdf" file in the "Documents" folder of the repository contains the ideas for optimizing the queries in the "4. data_retrieval_scripts.sql" file.
+
+This what I tried to do best in the time we had. We can make more frameworks and extend designs to make a better data lakehouse project here.
